@@ -1,1 +1,183 @@
-Hello, 我是Cody陳昱臻
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首頁</title>
+    <style>
+        body {
+            font-family: "Noto Serif TC", "標楷體", serif;
+            background: radial-gradient(circle at 60% 20%, #fffbe6 0%, #e9d8a6 40%, #b08968 100%);
+            margin: 0; padding: 0;
+            /* 水墨暈染效果 */
+            filter: grayscale(0.2) contrast(1.2);
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: rgba(255,255,255,0.85);
+            padding: 32px;
+            border-radius: 16px;
+            border: 6px solid #7f5539;
+            box-shadow: 0 8px 48px 0 rgba(80,40,0,0.25), 0 0 0 16px rgba(255,255,255,0.2) inset;
+            /* 增加水墨邊緣暈染 */
+            background: rgba(255,255,255,0.92);
+        }
+        .container::before {
+            content: "";
+            /* 移除卍符號 */
+        }
+        h1 {
+            color: #2d1e0f;
+            font-family: "標楷體", "Noto Serif TC", serif;
+            font-size: 3.2em;
+            letter-spacing: 0.18em;
+            text-shadow: 0 0 16px #fffbe6, 4px 4px 24px #b08968;
+            filter: blur(0.5px) contrast(1.2);
+        }
+        p {
+            color: #6c584c;
+            font-size: 1.3em;
+            font-family: "Noto Serif TC", serif;
+            text-shadow: 0 0 8px #e9d8a6;
+        }
+        .ancient-border {
+            display:none;
+        }
+        .ink-art {
+            width: 100%;
+            height: 260px;
+            margin: 32px auto 0;
+            display: block;
+            filter: grayscale(0.7) blur(0.5px) contrast(1.3);
+        }
+        .tech-news {
+            background: linear-gradient(90deg, #fffbe6 60%, #e9d8a6 100%);
+            border: 2px solid #b08968;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(176,137,104,0.12);
+            padding: 20px 28px;
+            margin: 24px 0 16px 0;
+            font-family: 'Noto Sans TC', '微軟正黑體', Arial, sans-serif;
+            color: #7f5539;
+        }
+        .tech-news h2 {
+            margin: 0 0 12px 0;
+            font-size: 1.6em;
+            color: #b08968;
+            letter-spacing: 0.08em;
+            text-shadow: 0 0 8px #fffbe6;
+        }
+        .tech-news ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .tech-news li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #e9d8a6;
+            font-size: 1.1em;
+        }
+        .tech-news li:last-child {
+            border-bottom: none;
+        }
+        .news-title {
+            font-weight: bold;
+            color: #7f5539;
+        }
+        .news-date {
+            color: #b08968;
+            font-size: 0.95em;
+            font-family: 'Noto Sans TC', Arial, sans-serif;
+        }
+        .tech-news-modern {
+            margin-top: 32px;
+            background: linear-gradient(90deg, #fffbe6 0%, #e9d8a6 60%, #b08968 100%);
+            border: 2.5px solid #b08968;
+            border-radius: 18px;
+            box-shadow: 0 4px 32px 0 rgba(176,137,104,0.18), 0 0 24px 4px #fffbe6 inset;
+            padding: 28px 36px;
+            font-family: 'Noto Sans TC', '微軟正黑體', Arial, sans-serif;
+            color: #7f5539;
+            position: relative;
+            overflow: hidden;
+        }
+        .tech-news-modern h2 {
+            margin: 0 0 18px 0;
+            font-size: 2em;
+            color: #b08968;
+            letter-spacing: 0.12em;
+            text-shadow: 0 0 16px #fffbe6, 0 0 8px #e9d8a6;
+        }
+        .tech-news-content {
+            font-size: 1.2em;
+            color: #7f5539;
+            text-align: center;
+            padding: 16px 0;
+            opacity: 0.85;
+        }
+        .tech-news-modern::after {
+            content: "";
+            position: absolute;
+            top: -40px; right: -40px;
+            width: 120px; height: 120px;
+            background: radial-gradient(circle, #fffbe6 0%, #e9d8a6 80%, transparent 100%);
+            opacity: 0.4;
+            filter: blur(8px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>歡迎來到首頁</h1>
+        <svg class="ink-art" viewBox="0 0 800 260">
+            <defs>
+                <radialGradient id="inkSun" cx="0.8" cy="0.2" r="0.3">
+                    <stop offset="0%" stop-color="#fffbe6"/>
+                    <stop offset="100%" stop-color="#b08968"/>
+                </radialGradient>
+                <filter id="inkBlur" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="8"/>
+                </filter>
+                <linearGradient id="woodGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#b08968"/>
+                    <stop offset="100%" stop-color="#7f5539"/>
+                </linearGradient>
+            </defs>
+            <!-- 山水背景 -->
+            <ellipse cx="700" cy="50" rx="38" ry="38" fill="url(#inkSun)" filter="url(#inkBlur)" opacity="0.7"/>
+            <path d="M0,200 Q120,80 240,200 T480,200 T800,200 V220 H0 Z" fill="#e9d8a6" filter="url(#inkBlur)" opacity="0.7"/>
+            <path d="M0,220 Q200,100 400,220 T800,220" fill="none" stroke="#7f5539" stroke-width="8" opacity="0.7" filter="url(#inkBlur)"/>
+            <path d="M100,180 Q180,120 260,180 Q340,140 420,180 Q500,160 580,180" fill="none" stroke="#2d1e0f" stroke-width="6" opacity="0.8" filter="url(#inkBlur)"/>
+            <path d="M200,200 Q220,160 240,200 Q260,180 280,200" fill="none" stroke="#7f5539" stroke-width="4" opacity="0.6" filter="url(#inkBlur)"/>
+            <circle cx="120" cy="120" r="18" fill="#fffbe6" opacity="0.5" filter="url(#inkBlur)"/>
+            <!-- 五個古代質感物品 -->
+            <!-- 古代書卷 -->
+            <rect x="120" y="230" width="60" height="16" rx="8" fill="#e9d8a6" stroke="#7f5539" stroke-width="2"/>
+            <rect x="120" y="230" width="8" height="16" rx="4" fill="#b08968" stroke="#7f5539" stroke-width="1"/>
+            <!-- 玉珮 -->
+            <ellipse cx="220" cy="238" rx="14" ry="8" fill="#fffbe6" stroke="#b08968" stroke-width="2"/>
+            <circle cx="220" cy="238" r="3" fill="#b08968"/>
+            <!-- 青銅鼎 -->
+            <rect x="300" y="230" width="28" height="18" rx="6" fill="#7f5539" stroke="#2d1e0f" stroke-width="2"/>
+            <rect x="304" y="248" width="8" height="8" fill="#2d1e0f" rx="2"/>
+            <rect x="316" y="248" width="8" height="8" fill="#2d1e0f" rx="2"/>
+            <!-- 紅燈籠 -->
+            <ellipse cx="400" cy="238" rx="12" ry="16" fill="#b08968" stroke="#7f5539" stroke-width="2"/>
+            <rect x="394" y="222" width="12" height="6" fill="#7f5539" rx="2"/>
+            <rect x="394" y="254" width="12" height="6" fill="#7f5539" rx="2"/>
+            <!-- 琴（古箏） -->
+            <rect x="500" y="230" width="56" height="10" rx="5" fill="#b08968" stroke="#7f5539" stroke-width="2"/>
+            <line x1="508" y1="235" x2="548" y2="235" stroke="#2d1e0f" stroke-width="1.5"/>
+            <line x1="508" y1="238" x2="548" y2="238" stroke="#2d1e0f" stroke-width="1.5"/>
+        </svg>
+        <div class="tech-news tech-news-modern">
+            <h2>最新資訊</h2>
+            <div class="tech-news-content">（暫無最新資訊）</div>
+        </div>
+    </div>
+</body>
+</html>
