@@ -1,0 +1,8 @@
+.content {
+    display: none;
+    margin: 20px;
+}
+
+.content.active {
+    display: block;
+}

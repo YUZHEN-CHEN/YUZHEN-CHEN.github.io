@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
     <style>
         body,
         h1,
@@ -75,79 +77,197 @@
                 <h1><b>My Portfolio</b></h1>
                 <div class="w3-section w3-bottombar w3-padding-16">
                     <span class="w3-margin-right">Filter:</span>
-                    <button class="w3-button w3-black">ALL</button>
-                    <button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Process</button>
-                    <button class="w3-button w3-white w3-hide-small"><i
+                    <button class="w3-button w3-white" id="ALLBtn">ALL</button>
+                    <button class="w3-button w3-white" id="ProcessBtn"><i
+                            class="fa fa-diamond w3-margin-right"></i>Process</button>
+                    <button class="w3-button w3-white" id="NewsBtn"><i
                             class="fa fa-photo w3-margin-right"></i>News</button>
-                    <button class="w3-button w3-white w3-hide-small"><i
+                    <button class="w3-button w3-white" id="RecentBtn"><i
                             class="fa fa-map-pin w3-margin-right"></i>Recent</button>
+                    <button class="w3-button w3-black" id="WebpageBtn"><i
+                            class="fa fa-map-pin w3-margin-right"></i>webpage</button>
+                    <button class="w3-button w3-white" id="SwiftBtn"><i
+                            class="fa fa-map-pin w3-margin-right"></i>Swift</button>
+                    <button class="w3-button w3-white" id="ArticleBtn"><i
+                            class="fa fa-map-pin w3-margin-right"></i>Article</button>
                 </div>
             </div>
         </header>
 
+        <div id="ALL" class="content">
+            <p>All project is preparing...(年為單位)</p>
+        </div>
         <!-- First Photo Grid-->
-        <div class="w3-row-padding">
-            <div class="w3-third w3-container w3-margin-bottom">
-                <image src="./w3images/0916.png" alt="Norway" style="width:100%" class="w3-hover-opacity"></iframe>
+
+        <div id="Webpage" class="content active">
+            <div class="w3-row-padding">
+                <div class="w3-third w3-container w3-margin-bottom">
+                    <image src="./w3images/0916.png" alt="Norway" style="width:100%" class="w3-hover-opacity"></iframe>
+                        <div class="w3-container w3-white">
+                            <p><b>Google Site for first personal webpage</b></p>
+                            <p>Produced in 2025/09/16<br>
+                                <a href="https://sites.google.com/stu.ntue.edu.tw/cody0312/%E9%A6%96%E9%A0%81">
+                                    <p>This webpage with my Doll in school class to done</p><a>
+                            </p>
+                        </div>
+                </div>
+                <div class="w3-third w3-container w3-margin-bottom">
+                    <image src="./w3images/0923.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                            <p><b>My Second webpage with html and AI</b></p>
+                            <p>Produced in 2025/09/23</p>
+                            <a href="https://yuzhen-chen.github.io/">
+                                <p>This webpage with copilot in school class to done</p><a>
+                        </div>
+                </div>
+                <div class="w3-third w3-container">
+                    <img src="./w3images/0930.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
                     <div class="w3-container w3-white">
-                        <p><b>Google Site for first personal webpage</b></p>
-                        <p>Produced in 2025/09/16<br>
-                            <a href="https://sites.google.com/stu.ntue.edu.tw/cody0312/%E9%A6%96%E9%A0%81">
-                                <p>This webpage with my Doll in school class to done</p><a>
+                        <p><b>Third webpage using table for tang poetry</b></p>
+                        <p>Produced in 2025/09/30</p>
+                        <a href="https://yuzhen-chen.github.io/0930/">
+                            <p>This webpage with w3school in school class to done</p><a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Photo Grid-->
+            <div class="w3-row-padding">
+                <div class="w3-third w3-container w3-margin-bottom">
+                    <img src="./w3images/1007.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-white">
+                        <p><b>The forth webpage for picture and table practice</b></p>
+                        <p>Prouduced in 2025/10/07</p>
+                        <a href="https://yuzhen-chen.github.io/1007/">
+                            <p>This webpage with w3school in school class to learn</p><a>
+                    </div>
+                </div>
+                <div class="w3-third w3-container w3-margin-bottom">
+                    <img src="./w3images/a1014.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-white">
+                        <p><b>The fifth webpage for namecard</b></p>
+                        <p>Produced in 2025/10/14</p>
+                        <a href="https://yuzhen-chen.github.io/1014/">
+                            <p>This webpage with ai and div to done</p><a>
+                    </div>
+                </div>
+                <div class="w3-third w3-container">
+                    <img src="./w3images/b1014.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-white">
+                        <p><b>Created outside the fifth webpage</b></p>
+                        <p>Produced in 2025/10/14</p>
+                        <a href="https://yuzhen-chen.github.io/1014/1014">
+                            <p>This webpage with ai and div to done, too</p><a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="Swift" class="content">
+            <p>Swift project is preparing...</p>
+            <div class="w3-row-padding">
+                <div class="w3-third w3-container w3-margin-bottom">
+                    <div class="w3-container w3-white">
+                        <p><b>繪製圖形</b></p>
+                        <p>Produced in 2025/10/01<br>
+                            <a href="https://pastebin.com/Gzw2YFLe">
+                                <p>認識到自訂顏色與pasteBin</p><a>
                         </p>
                     </div>
-            </div>
-            <div class="w3-third w3-container w3-margin-bottom">
-                <image src="./w3images/0923.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                </div>
+                <div class="w3-third w3-container w3-margin-bottom">
                     <div class="w3-container w3-white">
-                        <p><b>My Second webpage with html and AI</b></p>
-                        <p>Produced in 2025/09/23</p>
-                        <a href="https://yuzhen-chen.github.io/">
-                            <p>This webpage with copilot in school class to done</p><a>
+                        <p><b>line介面</b></p>
+                        <p>Produced in 2025/10/08</p>
+                        <a href="https://pastebin.com/28b4mkqT">
+                            <p>認識垂直與平行堆疊</p><a>
                     </div>
-            </div>
-            <div class="w3-third w3-container">
-                <img src="./w3images/0930.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
-                <div class="w3-container w3-white">
-                    <p><b>Third webpage using table for tang poetry</b></p>
-                    <p>Produced in 2025/09/30</p>
-                    <a href="https://yuzhen-chen.github.io/0930/">
-                        <p>This webpage with w3school in school class to done</p><a>
+                </div>
+                <div class="w3-third w3-container">
+                    <div class="w3-container w3-white">
+                        <p><b>重複使用</b></p>
+                        <p>Produced in 2025/10/15</p>
+                        <a href="https://pastebin.com/zeYhFLp6">
+                            <p>了解到變數與螢幕滑動方法，以及結構化，還知道了Swift Playgrounds</p><a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Second Photo Grid-->
-        <div class="w3-row-padding">
-            <div class="w3-third w3-container w3-margin-bottom">
-                <img src="./w3images/1007.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
-                <div class="w3-container w3-white">
-                    <p><b>The forth webpage for picture and table practice</b></p>
-                    <p>Prouduced in 2025/10/07</p>
-                    <a href="https://yuzhen-chen.github.io/1007/">
-                        <p>This webpage with w3school in school class to learn</p><a>
-                </div>
-            </div>
-            <div class="w3-third w3-container w3-margin-bottom">
-                <img src="./w3images/a1014.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
-                <div class="w3-container w3-white">
-                    <p><b>The fifth webpage for namecard</b></p>
-                    <p>Produced in 2025/10/14</p>
-                    <a href="https://yuzhen-chen.github.io/1014/">
-                        <p>This webpage with ai and div to done</p><a>
-                </div>
-            </div>
-            <div class="w3-third w3-container">
-                <img src="./w3images/b1014.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
-                <div class="w3-container w3-white">
-                    <p><b>Created outside the fifth webpage</b></p>
-                    <p>Produced in 2025/10/14</p>
-                    <a href="https://yuzhen-chen.github.io/1014/1014">
-                        <p>This webpage with ai and div to done, too</p><a>
+        <div id="News" class="content">
+            <p>News project is preparing...</p>
+            <div class="w3-twothird">
+                <div class="w3-container w3-card w3-white w3-margin-bottom">
+                    <h2 class="w3-text-grey w3-padding-16"><i
+                            class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>最近消息
+                    </h2>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>最近要考試了，沒有時間做其他事情</b></h5>
+                        <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Oct 2025 - <span
+                                class="w3-tag w3-teal w3-round">Nov 2025</span></h6>
+                        <p>忙著準備考試跟英文，以及作業，像是IOT</p>
+                        <hr>
+                    </div>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>要校慶了，無法開心起來</b></h5>
+                        <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>11, Nov 2025 - 13,
+                            Nov 2025
+                        </h6>
+                        <p>因為三天都要留在學校，但很開心不用上體育課</p>
+                        <hr>
+                    </div>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>要記得準備好12月生日禮物與聖誕禮物</b></h5>
+                        <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Nov 2025 - 25, Dec
+                            2025
+                        </h6>
+                        <p>想好壞禮物要送什麼，以及其他人的生日禮物，以及聖誕節給非住宿舍生的禮物</p><br>
+                    </div>
                 </div>
             </div>
         </div>
 
+        <div id="Recent" class="content">
+            <p>Recent project is preparing...(月為單位)</p>
+        </div>
+
+        <div id="Process" class="content">
+            <p>Process project is preparing...(AIOT專題；英文學習正進行)</p>
+        </div>
+
+        <div id="Article" class="content">
+            <p>Article project is preparing...</p>
+            <div class="w3-row-padding">
+                <div class="w3-third w3-container w3-margin-bottom">
+                    <div class="w3-container w3-white">
+                        <p><b>18年來的旅程</b></p>
+                        <p>Produced in 2025/04/09<br>
+                            <a
+                                href="https://drive.google.com/file/d/1TdECEgAJQx5ctVnaR90JJQrG5BBjbkYi/view?usp=sharing">
+                                <p>高三畢業那年，國文課所寫下的我一生的旅程</p><a>
+                        </p>
+                    </div>
+                </div>
+                <div class="w3-third w3-container w3-margin-bottom">
+                    <div class="w3-container w3-white">
+                        <p><b>line介面</b></p>
+                        <p>Produced in 2025/9/22</p>
+                        <a
+                            href="https://docs.google.com/document/d/1WxpFaQ9x-YZojE6rRv0Z3i2fARql9UTp/edit?usp=sharing&ouid=109719842400753034737&rtpof=true&sd=true">
+                            <p>大學國文課裡想出來的自我介紹</p><a>
+                    </div>
+                </div>
+                <div class="w3-third w3-container">
+                    <div class="w3-container w3-white">
+                        <p><b>關於記憶的故事-鐘聲範圍下的童年</b></p>
+                        <p>Produced in 2025/10/20</p>
+                        <a
+                            href="https://docs.google.com/document/d/1LtOuEWsgA6mEr4DmdDb92XzWyVaRTU0e/edit?usp=sharing&ouid=109719842400753034737&rtpof=true&sd=true">
+                            <p>我的童年記憶，圍繞著學校為主軸</p><a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Pagination -->
 
         <!-- Images of Me -->
@@ -162,7 +282,8 @@
 
         <div class="w3-container w3-padding-large" style="margin-bottom:32px">
             <h4><b>About Me</b></h4>
-            <p>Hello everyone! My Chinese name is “YuZhen, Chen(陳昱臻)”, and my English is Cody(say more about my English
+            <p>Hello everyone! My Chinese name is “YuZhen, Chen(陳昱臻)”, and my English is Cody(say more about my
+                English
                 name is Jenny, Chen before in my childhood life), and addition now I have a French name, Jade. I’m
                 pleased that you can have a chance to see my writing things and let us have great communication from
                 anywhere. If you want to know me more, you can click on the button to know me better.</p>
@@ -280,6 +401,51 @@
                 document.getElementById("mySidebar").style.display = "none";
                 document.getElementById("myOverlay").style.display = "none";
             }
+
+            console.log("✅ JS 載入成功");
+
+            const ALLBtn = document.getElementById('ALLBtn');
+            const WebpageBtn = document.getElementById('WebpageBtn');
+            const SwiftBtn = document.getElementById('SwiftBtn');
+            const NewsBtn = document.getElementById('NewsBtn');
+            const RecentBtn = document.getElementById('RecentBtn');
+            const ProcessBtn = document.getElementById('ProcessBtn');
+            const ArticleBtn = document.getElementById('ArticleBtn');
+
+            const ALL = document.getElementById('ALL');
+            const Webpage = document.getElementById('Webpage');
+            const Swift = document.getElementById('Swift');
+            const News = document.getElementById('News');
+            const Recent = document.getElementById('Recent');
+            const Process = document.getElementById('Process');
+            const Article = document.getElementById('Article');
+
+            let black = 1;
+            const locationBtn = [ALLBtn, WebpageBtn, SwiftBtn, NewsBtn, RecentBtn, ProcessBtn, ArticleBtn];
+            const locationContent = [ALL, Webpage, Swift, News, Recent, Process, Article];
+
+            function changeTab(index) {
+                console.log("切換到：", index);
+
+                if (black === index) return;
+
+                // reset previous
+                locationBtn[black].classList.remove("w3-black");
+                locationBtn[black].classList.add("w3-white");
+                locationContent[black].classList.remove("active");
+
+                // activate new
+                locationBtn[index].classList.remove("w3-white");
+                locationBtn[index].classList.add("w3-black");
+                locationContent[index].classList.add("active");
+
+                // update
+                black = index;
+            }
+
+            locationBtn.forEach((btn, i) => {
+                btn.addEventListener("click", () => changeTab(i));
+            });
         </script>
 
 
