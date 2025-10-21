@@ -4,46 +4,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <title>1021</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Raleway", sans-serif
+        }
+    </style>
 </head>
 
-<body>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
 
-    <!-- Navbar (sit on top) -->
-    <div class="w3-top">
-        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-            <a href="#home" class="w3-bar-item w3-button"><b>BR</b> Architects</a>
-            <!-- Float links to the right. Hide them on small screens -->
-            <div class="w3-right w3-hide-small">
-                <a href="#projects" class="w3-bar-item w3-button">Projects</a>
-                <a href="#about" class="w3-bar-item w3-button">About</a>
-                <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+        <div class="w3-container">
+            <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey"
+                title="close menu">
+                <i class="fa fa-remove"></i>
+            </a>
+            <img src="./w3images/person.png" style="width:45%;" class="w3-round"><br><br>
+            <h4><b>PORTFOLIO</b></h4>
+            <p class="w3-text-grey">Template by W3.CSS</p>
+        </div>
+        <div class="w3-bar-block">
+            <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i
+                    class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a>
+            <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
+                    class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a>
+            <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
+                    class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
+        </div>
+        <div class="w3-panel w3-large">
+            <a href="https://www.facebook.com/share/1A5uSexW4h/"><i
+                    class="fa fa-facebook-official w3-hover-opacity"></i></a>
+            <a href="https://www.instagram.com/cyuzhen0312?igsh=MTQybzR4MmE5ODYxag=="><i
+                    class="fa fa-instagram w3-hover-opacity"></i></a>
+            <a href="https://github.com/YUZHEN-CHEN"><i class="fa fa-github w3-hover-opacity"></i></a>
+            <a href="https://youtube.com/@3209-learning?si=Nx8RBY4WNcH-E4e0"><i
+                    class="fa fa-youtube w3-hover-opacity"></i></a>
+            <a
+                href="https://www.linkedin.com/in/%E6%98%B1%E8%87%BB-%E9%99%B3-bb7607284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                    class="fa fa-linkedin w3-hover-opacity"></i></a>
+        </div>
+    </nav>
+
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+        title="close side menu" id="myOverlay"></div>
+
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:300px">
+
+        <!-- Header -->
+        <header id="portfolio">
+            <a href="#"><img src="./w3images/person1.webp" style="width:65px;"
+                    class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+            <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i
+                    class="fa fa-bars"></i></span>
+            <div class="w3-container">
+                <h1><b>My Portfolio</b></h1>
+                <div class="w3-section w3-bottombar w3-padding-16">
+                    <span class="w3-margin-right">Filter:</span>
+                    <button class="w3-button w3-black">ALL</button>
+                    <button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Process</button>
+                    <button class="w3-button w3-white w3-hide-small"><i
+                            class="fa fa-photo w3-margin-right"></i>News</button>
+                    <button class="w3-button w3-white w3-hide-small"><i
+                            class="fa fa-map-pin w3-margin-right"></i>Recent</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- First Photo Grid-->
+        <div class="w3-row-padding">
+            <div class="w3-third w3-container w3-margin-bottom">
+                <image src="./w3images/0916.png" alt="Norway" style="width:100%" class="w3-hover-opacity"></iframe>
+                    <div class="w3-container w3-white">
+                        <p><b>Google Site for first personal webpage</b></p>
+                        <p>Produced in 2025/09/16<br>
+                            <a href="https://sites.google.com/stu.ntue.edu.tw/cody0312/%E9%A6%96%E9%A0%81">
+                                <p>This webpage with my Doll in school class to done</p><a>
+                        </p>
+                    </div>
+            </div>
+            <div class="w3-third w3-container w3-margin-bottom">
+                <image src="./w3images/0923.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                    <div class="w3-container w3-white">
+                        <p><b>My Second webpage with html and AI</b></p>
+                        <p>Produced in 2025/09/23</p>
+                        <a href="https://yuzhen-chen.github.io/">
+                            <p>This webpage with copilot in school class to done</p><a>
+                    </div>
+            </div>
+            <div class="w3-third w3-container">
+                <img src="./w3images/0930.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                <div class="w3-container w3-white">
+                    <p><b>Third webpage using table for tang poetry</b></p>
+                    <p>Produced in 2025/09/30</p>
+                    <a href="https://yuzhen-chen.github.io/0930/">
+                        <p>This webpage with w3school in school class to done</p><a>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Header -->
 
-    <!-- Page content -->
+        <!-- Second Photo Grid-->
+        <div class="w3-row-padding">
+            <div class="w3-third w3-container w3-margin-bottom">
+                <img src="./w3images/1007.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                <div class="w3-container w3-white">
+                    <p><b>The forth webpage for picture and table practice</b></p>
+                    <p>Prouduced in 2025/10/07</p>
+                    <a href="https://yuzhen-chen.github.io/1007/">
+                        <p>This webpage with w3school in school class to learn</p><a>
+                </div>
+            </div>
+            <div class="w3-third w3-container w3-margin-bottom">
+                <img src="./w3images/a1014.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                <div class="w3-container w3-white">
+                    <p><b>The fifth webpage for namecard</b></p>
+                    <p>Produced in 2025/10/14</p>
+                    <a href="https://yuzhen-chen.github.io/1014/">
+                        <p>This webpage with ai and div to done</p><a>
+                </div>
+            </div>
+            <div class="w3-third w3-container">
+                <img src="./w3images/b1014.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                <div class="w3-container w3-white">
+                    <p><b>Created outside the fifth webpage</b></p>
+                    <p>Produced in 2025/10/14</p>
+                    <a href="https://yuzhen-chen.github.io/1014/1014">
+                        <p>This webpage with ai and div to done, too</p><a>
+                </div>
+            </div>
+        </div>
 
-    <!-- Project Section -->
+        <!-- Pagination -->
 
-    <!-- About Section -->
+        <!-- Images of Me -->
+        <div class="w3-row-padding w3-padding-16" id="about">
+            <div class="w3-col m6">
+                <img src="./w3images/person1.webp" alt="Me" style="width:100%">
+            </div>
+            <div class="w3-col m6">
+                <img src="./w3images/person2.jpg" alt="Me" style="width:100%">
+            </div>
+        </div>
 
-    <!-- Contact Section -->
+        <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+            <h4><b>About Me</b></h4>
+            <p>Hello everyone! My Chinese name is “YuZhen, Chen(陳昱臻)”, and my English is Cody(say more about my English
+                name is Jenny, Chen before in my childhood life), and addition now I have a French name, Jade. I’m
+                pleased that you can have a chance to see my writing things and let us have great communication from
+                anywhere. If you want to know me more, you can click on the button to know me better.</p>
+            <hr>
 
-    <!-- Image of location/map -->
-    <div class="w3-container">
-        <img src="./w3images/map.jpg" class="w3-image" style="width:100%">
-    </div>
+            <h4>Main Skills</h4>
+            <!-- Progress bars / Skills -->
+            <p>Strong Research(資料搜尋)</p>
+            <div class="w3-grey">
+                <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:90%">90%</div>
+            </div>
+            <p>Quick learner(快速理解大概)</p>
+            <div class="w3-grey">
+                <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:80%">80%</div>
+            </div>
+            <p>Wiling to try new things(樂於嘗試新事物)</p>
+            <div class="w3-grey">
+                <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:95%">95%</div>
+            </div>
+            <p>
+                <button class="w3-button w3-dark-grey w3-padding-large w3-margin-top w3-margin-bottom">
+                    <i class="fa fa-download w3-margin-right"></i>Download Resume
+                </button>
+            </p>
+            <hr>
 
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.2771475927175!2d121.54220407537628!3d25.024666977822424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a908a8232611%3A0xeebfb2d71a5025c7!2z5ZyL56uL6Ie65YyX5pWZ6IKy5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1761009651662!5m2!1szh-TW!2stw" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/YyX3zrXYCxc?si=FFDZoxAPdlRualXn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <!-- Pricing Tables -->
 
-    <!-- End page content -->
+            <!-- Contact Section -->
+            <div class="w3-container w3-padding-large w3-grey">
+                <h4 id="contact"><b>Contact Me</b></h4>
+                <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
+                    <div class="w3-third w3-dark-grey">
+                        <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
+                        <p>czhen3209@email.com</p>
+                    </div>
+                    <div class="w3-third w3-teal">
+                        <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
+                        <p>Yingge, TW</p>
+                    </div>
+                    <div class="w3-third w3-dark-grey">
+                        <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
+                        <p>Discord User Name:yuzhen0312</p>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Footer -->
+            <!-- Footer -->
+
+            <footer class="w3-container w3-padding-32 w3-dark-grey">
+                <div class="w3-row-padding">
+                    <div class="w3-third">
+                        <h3>FOOTER</h3>
+                        <p>This webpage is all using css of w3school to done.</p>
+                        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+                        </p>
+                    </div>
+
+                    <div class="w3-third">
+                        <h3>BLOG POSTS</h3>
+                        <ul class="w3-ul w3-hoverable">
+                            <li class="w3-padding-16">
+                                <img src="./w3images/fun.jpg" class="w3-left w3-margin-right" style="width:50px">
+                                <span class="w3-large">Interested</span><br>
+                                <span>One of the two interested things</span>
+                            </li>
+                            <li class="w3-padding-16">
+                                <img src="./w3images/heartwarming.jpg" class="w3-left w3-margin-right"
+                                    style="width:50px">
+                                <span class="w3-large">Hearywarming</span><br>
+                                <span>From a elementary school classmate</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="w3-third">
+                        <h3>Main TAGS</h3>
+                        <p>
+                            <span class="w3-tag w3-black w3-margin-bottom">Learn</span> <span
+                                class="w3-tag w3-grey w3-small w3-margin-bottom">Taiwan</span> <span
+                                class="w3-tag w3-grey w3-small w3-margin-bottom">Picture</span>
+                            <span class="w3-tag w3-grey w3-small w3-margin-bottom">Music</span> <span
+                                class="w3-tag w3-grey w3-small w3-margin-bottom">DIY</span> <span
+                                class="w3-tag w3-grey w3-small w3-margin-bottom">Ideas</span>
+                            <span class="w3-tag w3-grey w3-small w3-margin-bottom">Notes</span> <span
+                                class="w3-tag w3-grey w3-small w3-margin-bottom">Photo</span> <span
+                                class="w3-tag w3-grey w3-small w3-margin-bottom">Life</span>
+                            <span class="w3-tag w3-grey w3-small w3-margin-bottom">News</span> <span
+                                class="w3-tag w3-grey w3-small w3-margin-bottom">Design</span> <span
+                                class="w3-tag w3-grey w3-small w3-margin-bottom">Article</span>
+                            <span class="w3-tag w3-grey w3-small w3-margin-bottom">Code</span> <span
+                                class="w3-tag w3-grey w3-small w3-margin-bottom">Experiment</span>
+                        </p>
+                    </div>
+
+                </div>
+
+            </footer>
+
+            <div class="w3-black w3-center w3-padding-24">Powered by <a
+                    href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
+                    class="w3-hover-opacity">w3.css</a>(由w3school template修改製作)</div>
+            <!-- End page content -->
+        </div>
+
+        <script>
+            // Script to open and close sidebar
+            function w3_open() {
+                document.getElementById("mySidebar").style.display = "block";
+                document.getElementById("myOverlay").style.display = "block";
+            }
+
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+                document.getElementById("myOverlay").style.display = "none";
+            }
+        </script>
+
 
 </body>
 
