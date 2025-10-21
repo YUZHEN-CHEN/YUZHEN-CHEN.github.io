@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>三個區塊</title>
+    <style>
+        body {
+            background: #f5f5f5;
+            font-family: "Segoe UI", Arial, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 98%;
+            min-height: 60vh;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            gap: 32px;
+            justify-content: center;
+            align-items: center;
+            background: #fafafa;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            padding: 64px 0;
+        }
+        .block {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 340px;
+            border: none;
+            border-radius: 12px;
+            padding: 16px 8px;
+            background: transparent;
+            box-shadow: none;
+            margin: 0;
+        }
+        .block img {
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+            clip-path: polygon(
+                50% 0%,
+                93% 25%,
+                93% 75%,
+                50% 100%,
+                7% 75%,
+                7% 25%
+            );
+            margin-bottom: 0;
+            margin-right: 16px;
+        }
+        .title {
+            font-size: 1.18em;
+            font-weight: bold;
+            color: #2a5d9f;
+            margin-bottom: 4px;
+            margin-left: 0;
+            margin-right: 0;
+            text-align: left;
+        }
+        .text {
+            font-size: 1.1em;
+            color: #333;
+            text-align: left;
+            text-indent: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="block">
+            <img src="pic1.jpg" alt="圖片1">
+            <div>
+                <div class="title">耀眼夕陽</div>
+                <div class="text">夕陽緩緩沉落，天邊的雲被染成一層層金紅。浪花拍打著岸邊，閃著細碎的光，如無數的星在海面跳躍。海風帶著鹹味與溫度，輕輕撫過臉頰。此刻的世界靜止了，只有光與水在對話，彷彿整個大海都在告別白晝，迎接夜的溫柔。</div>
+            </div>
+        </div>
+        <div class="block">
+            <img src="pic2.jpg" alt="圖片2">
+            <div>
+                <div class="title">美麗夜晚</div>
+                <div class="text">小巷深處傳來老舊收音機的輕聲樂曲，燈光從窗縫裡灑出，映在石板路上，一片柔黃。微風攜著花香與咖啡的氣息，街角的貓輕步走過，尾巴在空氣中劃出一條弧線。這樣的夜，不需要言語，時間被靜謐包裹，連腳步聲都變得溫柔。</div>
+            </div>
+        </div>
+        <div class="block">
+            <img src="pic3.jpg" alt="圖片3">
+            <div>
+                <div class="title">海邊時光</div>
+                <div class="text">天空與海面融為一色，藍得無邊無際。風掠過海面，捲起層層波紋，彷彿在呼吸。遠方的雲像夢，漂浮在不屬於現實的時空裡。站在沙灘上，人顯得渺小，卻又被這一片藍包容。那是一種寧靜的永恆，讓心也在藍色的時間裡慢慢流動。</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
