@@ -169,3 +169,70 @@
     </script>
 </body>
 </html>
+<section id="about" class="about-section">
+    <div class="about-container">
+        <div class="about-text">
+            <h2>關於我</h2>
+            <p>大家好，我是陳昱臻(Cody)，目前就讀國北教資訊科學系，是大一新生，我的每一天都很美好快樂，對我來說最喜歡做的事是畫與寫故事，及看與聽故事，以及學習各種事物與實作。另外喜歡和家人朋友逛街。</p>
+        </div>
+        <div class="about-image">
+            <img id="carousel-image" src="image/1.jpg" alt="個人照片">
+        </div>
+    </div>
+</section>
+
+<style>
+    .about-section {
+        padding: 48px 32px;
+        background: #fff;
+    }
+    .about-container {
+        display: flex;
+        gap: 48px;
+        align-items: flex-start; /* 改為 flex-start 以固定文字位置 */
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .about-text {
+        flex: 1;
+    }
+    .about-text h2 {
+        font-size: 2rem;
+        color: #ff8800;
+        margin-bottom: 16px;
+    }
+    .about-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #333;
+    }
+    .about-image {
+        flex: 1;
+        text-align: center;
+    }
+    .about-image img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    @media (max-width: 600px) {
+        .about-container {
+            flex-direction: column;
+            gap: 24px;
+        }
+        .about-text h2 {
+            font-size: 1.5rem;
+        }
+    }
+</style>
+
+<script>
+    let currentImage = 1;
+    function cycleImages() {
+        currentImage++;
+        if(currentImage > 7) currentImage = 1;
+        document.getElementById('carousel-image').src = 'image/' + currentImage + '.jpg';
+    }
+    setInterval(cycleImages, 3000);
+</script>
