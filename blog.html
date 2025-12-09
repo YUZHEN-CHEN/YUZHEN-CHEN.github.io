@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>部落格 - yuzhen的個人網頁</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff9e5;
+            padding: 12px 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar-header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            width: auto;
+            gap: 24px;
+        }
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .navbar-logo img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 12px;
+            cursor: pointer;
+        }
+        .navbar-title {
+            flex: none;
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #ff8800;
+            letter-spacing: 2px;
+            margin: 0;
+            min-width: 240px;
+            width: auto;
+            position: relative;
+            left: 0;
+        }
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+                padding: 8px 12px;
+            }
+            .navbar-header {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 12px;
+                width: 100%;
+            }
+            .navbar-logo {
+                justify-content: center;
+                width: 100%;
+            }
+            .navbar-logo img {
+                margin: 0 auto 8px auto;
+                display: block;
+            }
+            .navbar-title {
+                font-size: 1.1rem;
+                width: auto;
+                min-width: unset;
+            }
+            .navbar-menu {
+                display: none;
+                flex-direction: column;
+                gap: 8px;
+                width: 100%;
+                background: #fff9e5;
+                padding: 8px 0;
+            }
+            .navbar-menu.show {
+                display: flex;
+            }
+            .navbar-toggle {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+                cursor: pointer;
+                font-size: 2rem;
+                color: #ff8800;
+                background: none;
+                border: none;
+                outline: none;
+                margin-bottom: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-header">
+            <div class="navbar-logo">
+                <a href="index.html" id="logo-link"><img src="image/icon.jpg" alt="Logo"></a>
+            </div>
+            <div class="navbar-title">yuzhen的個人網頁</div>
+        </div>
+        <button class="navbar-toggle" id="navbar-toggle" style="display:none;">&#x25BC;</button>
+        <div class="navbar-menu" id="navbar-menu">
+            <a href="index.html#about">關於我</a>
+            <a href="index.html#projects">作品集</a>
+            <a href="blog.html">部落格</a>
+            <a href="index.html#contact" id="contact-link">聯絡方式</a>
+        </div>
+    </nav>
+    <div style="padding:80px 32px 0 32px; text-align:center;">
+        <h2>部落格</h2>
+        <p style="font-size:1.5rem;color:#888;">尚在準備</p>
+    </div>
+    <script>
+    // logo 點擊回到首頁
+    document.getElementById('logo-link').onclick = function(e) {
+        // 允許 a href 跳轉
+    };
+    // RWD 導覽列收合
+    function handleResize() {
+        const toggle = document.getElementById('navbar-toggle');
+        const menu = document.getElementById('navbar-menu');
+        if(window.innerWidth <= 600) {
+            toggle.style.display = 'flex';
+            menu.classList.remove('show');
+        } else {
+            toggle.style.display = 'none';
+            menu.classList.add('show');
+        }
+    }
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    document.getElementById('navbar-toggle').onclick = function() {
+        const menu = document.getElementById('navbar-menu');
+        if(menu.classList.contains('show')) {
+            menu.classList.remove('show');
+            this.innerHTML = '&#x25BC;';
+        } else {
+            menu.classList.add('show');
+            this.innerHTML = '&#x25B2;';
+        }
+    };
+    </script>
+</body>
+</html>

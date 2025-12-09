@@ -16,6 +16,9 @@
             background: #fff9e5; /* 淡黃色 */
             padding: 12px 32px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         .navbar-header {
             display: flex;
@@ -132,8 +135,8 @@
         <div class="navbar-menu" id="navbar-menu">
             <a href="#about">關於我</a>
             <a href="#projects">作品集</a>
-            <a href="#blog">部落格</a>
-            <a href="#contact">聯絡方式</a>
+            <a href="blog.html">部落格</a>
+            <a href="#contact" id="contact-link">聯絡方式</a>
         </div>
     </nav>
     <script>
@@ -141,6 +144,15 @@
     document.getElementById('logo-link').onclick = function(e) {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+    // 聯絡方式點擊跳轉到最底下
+    document.getElementById('contact-link').onclick = function(e) {
+        e.preventDefault();
+        // 找到 footer 元素並平滑滾動
+        var footer = document.querySelector('footer');
+        if (footer) {
+            footer.scrollIntoView({ behavior: 'smooth' });
+        }
     };
     // RWD 導覽列收合
     function handleResize() {
@@ -169,11 +181,17 @@
     </script>
 </body>
 </html>
-<section id="about" class="about-section">
+<section id="about" class="about-section" style="padding-top:80px;">
     <div class="about-container">
         <div class="about-text">
             <h2>關於我</h2>
             <p>大家好，我是陳昱臻(Cody)，目前就讀國北教資訊科學系，是大一新生，我的每一天都很美好快樂，對我來說最喜歡做的事是畫與寫故事，及看與聽故事，以及學習各種事物與實作。另外喜歡和家人朋友逛街。</p>
+            <p><strong>喜歡吃：</strong>各種甜點，牛肉麵、水煎包、麥當勞薯條、各種飯類，口味喜酸甜鹹</p>
+            <p><strong>討厭吃：</strong>肉類加工食品、茄子、很硬的菜根、打拋肉、辣、紅豆、黃豆</p>
+            <p><strong>生日：</strong>2007/03/12 00:48</p>
+            <p><strong>大學參加過的社團與活動：</strong>資訊研究社、ios社、領袖社、雅思學習社群、蘆葦西畫社、校務系統開發課程</p>
+            <p><strong>高中參加過的社團：</strong>機器人研究社、錦客行旅社、榮服隊、生物培訓課程、法文AP課程、及校外科發社、葡萄糖一日營、機器遙控車一日營、Ewant遊學團、AIGO、中研院Open house參訪、資安一日營、生物科技mRNA疫苗講座、文化大學植物栽培一日營、學長姐經驗分享演講等</p>
+            <p><strong>現況與未來期望：</strong>我喜歡故事，所以在創作故事。未來希望一直學習與研究各方面，多去探索，看見更多世界的故事。我期待每一天，因為每天都是未知，都可能有意外與驚喜。我想要教各式各樣的人，不論年紀小還是大，希望大家就算畢業還可以繼續學習，但我不擅長講話，所以打算經營、製作教材給能運用的人。未來我想成為研發、研究的人，然後彙整成書及教材。</p>
         </div>
         <div class="about-image">
             <img id="carousel-image" src="image/1.jpg" alt="個人照片">
@@ -215,6 +233,7 @@
         max-width: 400px;
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        margin-top: 40px;
     }
     @media (max-width: 600px) {
         .about-container {
@@ -236,3 +255,233 @@
     }
     setInterval(cycleImages, 3000);
 </script>
+
+<section id="projects" class="projects-section" style="padding-top:80px;">
+    <div class="projects-container">
+        <h2>作品集</h2>
+        <hr style="border: 1px solid #ff8800; margin: 16px 0;">
+        <h4 style="font-size: 1.2rem; text-align: center; color: #333;">2025</h4>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>0916日</h3>
+                <a href="https://sites.google.com/stu.ntue.edu.tw/cody0312/%E9%A6%96%E9%A0%81" target="_blank">
+                    <img src="image/project-0916.jpg" alt="0916日作品">
+                </a>
+                <p class="project-date">0916</p>
+            </div>
+            <div class="project-card">
+                <h3>0923日</h3>
+                <a href="https://yuzhen-chen.github.io/old_index.html" target="_blank">
+                    <img src="image/project-0923.jpg" alt="0923日作品">
+                </a>
+                <p class="project-date">0923</p>
+            </div>
+            <div class="project-card">
+                <h3>0930日</h3>
+                <a href="https://yuzhen-chen.github.io/0930/" target="_blank">
+                    <img src="image/project-0930.jpg" alt="0930日作品">
+                </a>
+                <p class="project-date">0930</p>
+            </div>
+            <div class="project-card">
+                <h3>1007日</h3>
+                <a href="https://yuzhen-chen.github.io/1007/" target="_blank">
+                    <img src="image/project-1007.jpg" alt="1007日作品">
+                </a>
+                <p class="project-date">1007</p>
+            </div>
+            <div class="project-card">
+                <h3>1014日</h3>
+                <a href="https://yuzhen-chen.github.io/1014/" target="_blank">
+                    <img src="image/project-1014.jpg" alt="1014日作品">
+                </a>
+                <p class="project-date">1014</p>
+            </div>
+            <div class="project-card">
+                <h3>1014日</h3>
+                <a href="https://yuzhen-chen.github.io/1014/1014.html" target="_blank">
+                    <img src="image/project-1014-2.jpg" alt="1014日作品">
+                </a>
+                <p class="project-date">1014</p>
+            </div>
+            <div class="project-card">
+                <h3>1021日</h3>
+                <a href="https://yuzhen-chen.github.io/1021/" target="_blank">
+                    <img src="image/project-1021.jpg" alt="1021日作品">
+                </a>
+                <p class="project-date">1021</p>
+            </div>
+            <div class="project-card">
+                <h3>1111日</h3>
+                <a href="https://yuzhen-chen.github.io/old_2_index.html" target="_blank">
+                    <img src="image/project-1111.jpg" alt="1111日作品">
+                </a>
+                <p class="project-date">1111</p>
+            </div>
+            <div class="project-card">
+                <h3>1118日</h3>
+                <a href="https://yuzhen-chen.github.io/1118/index.html" target="_blank">
+                    <img src="image/project-1118.jpg" alt="1118日作品">
+                </a>
+                <p class="project-date">1118</p>
+            </div>
+            <div class="project-card">
+                <h3>1125日</h3>
+                <a href="https://sites.google.com/stu.ntue.edu.tw/cheese/%E9%A6%96%E9%A0%81" target="_blank">
+                    <img src="image/project-1125.jpg" alt="1125日作品">
+                </a>
+                <p class="project-date">1125</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .projects-section {
+        padding: 48px 32px;
+        background: #f5f5f5;
+    }
+    .projects-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .projects-container h2 {
+        font-size: 2rem;
+        color: #ff8800;
+        margin-bottom: 32px;
+        text-align: center;
+    }
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+    }
+    .project-card {
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+    .project-card h3 {
+        font-size: 1.3rem;
+        color: #333;
+        margin: 16px 16px 12px 16px;
+    }
+    .project-card a {
+        display: block;
+        overflow: hidden;
+    }
+    .project-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+    .project-card img:hover {
+        transform: scale(1.05);
+    }
+    .project-date {
+        font-size: 0.9rem;
+        color: #666;
+        margin: 12px 16px 16px 16px;
+    }
+    @media (max-width: 600px) {
+        .projects-grid {
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        .projects-container h2 {
+            font-size: 1.5rem;
+        }
+    }
+</style>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-tags">
+            <h3>分類標籤</h3>
+            <div class="tags-container">
+                <span class="tag">歷程</span>
+                <span class="tag">故事</span>
+                <span class="tag">實作</span>
+                <span class="tag">旅遊</span>
+                <span class="tag">學習</span>
+                <span class="tag">教學</span>
+            </div>
+        </div>
+        <div class="footer-contact">
+            <h3>聯絡方式</h3>
+            <p><strong>Gmail：</strong>czhen3209@gmail.com</p>
+            <p><strong>所在地：</strong>鶯歌區</p>
+            <p><strong>Line ID：</strong>chenyuzhen0312</p>
+            <p><strong>Instagram：</strong>cyuzhen0312</p>
+            <p><strong>Facebook：</strong>陳昱臻</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        background: #fff9e5;
+        padding: 48px 32px;
+        border-top: 2px solid #ff8800;
+    }
+    .footer-container {
+        display: flex;
+        gap: 64px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .footer-contact {
+        flex: 1;
+    }
+    .footer-contact h3 {
+        font-size: 1.5rem;
+        color: #ff8800;
+        margin-bottom: 16px;
+    }
+    .footer-contact p {
+        font-size: 1rem;
+        color: #333;
+        line-height: 1.8;
+        margin: 8px 0;
+    }
+    .footer-tags {
+        flex: 1;
+    }
+    .footer-tags h3 {
+        font-size: 1.5rem;
+        color: #ff8800;
+        margin-bottom: 16px;
+    }
+    .tags-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .tag {
+        background: #ff8800;
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    .tag:hover {
+        background: #ff7700;
+    }
+    @media (max-width: 600px) {
+        .footer-container {
+            flex-direction: column;
+            gap: 32px;
+        }
+        .footer-contact h3,
+        .footer-tags h3 {
+            font-size: 1.2rem;
+        }
+    }
+</style>
+
