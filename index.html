@@ -186,15 +186,17 @@
         <div class="about-text">
             <h2>關於我</h2>
             <p>大家好，我是陳昱臻(Cody)，目前就讀國北教資訊科學系，是大一新生，我的每一天都很美好快樂，對我來說最喜歡做的事是畫與寫故事，及看與聽故事，以及學習各種事物與實作。另外喜歡和家人朋友逛街。</p>
-            <p><strong>喜歡吃：</strong>各種甜點，牛肉麵、水煎包、麥當勞薯條、各種飯類，口味喜酸甜鹹</p>
+            <p><strong>喜歡吃：</strong></p>
             <p><strong>討厭吃：</strong>肉類加工食品、茄子、很硬的菜根、打拋肉、辣、紅豆、黃豆</p>
             <p><strong>生日：</strong>2007/03/12 00:48</p>
-            <p><strong>大學參加過的社團與活動：</strong>資訊研究社、ios社、領袖社、雅思學習社群、蘆葦西畫社、校務系統開發課程</p>
-            <p><strong>高中參加過的社團：</strong>機器人研究社、錦客行旅社、榮服隊、生物培訓課程、法文AP課程、及校外科發社、葡萄糖一日營、機器遙控車一日營、Ewant遊學團、AIGO、中研院Open house參訪、資安一日營、生物科技mRNA疫苗講座、文化大學植物栽培一日營、學長姐經驗分享演講等</p>
-            <p><strong>現況與未來期望：</strong>我喜歡故事，所以在創作故事。未來希望一直學習與研究各方面，多去探索，看見更多世界的故事。我期待每一天，因為每天都是未知，都可能有意外與驚喜。我想要教各式各樣的人，不論年紀小還是大，希望大家就算畢業還可以繼續學習，但我不擅長講話，所以打算經營、製作教材給能運用的人。未來我想成為研發、研究的人，然後彙整成書及教材。</p>
+            <br>
+            <br>
+            <!-- <p><strong>大學參加過的社團與活動：</strong>資訊研究社、ios社、領袖社、雅思學習社群、蘆葦西畫社、校務系統開發課程</p> -->
+            <!-- <p><strong>高中參加過的社團：</strong>機器人研究社、錦客行旅社、榮服隊、生物培訓課程、法文AP課程、及校外科發社、葡萄糖一日營、機器遙控車一日營、Ewant遊學團、AIGO、中研院Open house參訪、資安一日營、生物科技mRNA疫苗講座、文化大學植物栽培一日營、學長姐經驗分享演講等</p> -->
+            <!-- <p><strong>現況與未來期望：</strong>我喜歡故事，所以在創作故事。未來希望一直學習與研究各方面，多去探索，看見更多世界的故事。我期待每一天，因為每天都是未知，都可能有意外與驚喜。我想要教各式各樣的人，不論年紀小還是大，希望大家就算畢業還可以繼續學習，但我不擅長講話，所以打算經營、製作教材給能運用的人。未來我想成為研發、研究的人，然後彙整成書及教材。</p> -->
         </div>
         <div class="about-image">
-            <img id="carousel-image" src="image/1.jpg" alt="個人照片">
+            <img id="carousel-image" src="image/0.jpg" alt="個人照片">
         </div>
     </div>
 </section>
@@ -244,13 +246,20 @@
             font-size: 1.5rem;
         }
     }
+    #carousel-image {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin: 20px auto 0;  /* 上 20px、左右置中、下 0 */
+}
 </style>
 
 <script>
-    let currentImage = 1;
+    let currentImage = 0;
     function cycleImages() {
         currentImage++;
-        if(currentImage > 7) currentImage = 1;
+        if(currentImage > 7) currentImage = 0;
         document.getElementById('carousel-image').src = 'image/' + currentImage + '.jpg';
     }
     setInterval(cycleImages, 3000);
