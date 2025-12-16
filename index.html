@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,17 +10,20 @@
             margin: 0;
             font-family: Arial, sans-serif;
         }
+
         .navbar {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #fff9e5; /* 淡黃色 */
+            background: #fff9e5;
+            /* 淡黃色 */
             padding: 12px 32px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
+
         .navbar-header {
             display: flex;
             flex-direction: row;
@@ -28,25 +32,30 @@
             width: auto;
             gap: 24px;
         }
+
         .navbar-logo {
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
         .navbar-logo img {
-            width: 64px; /* 放大 logo */
+            width: 64px;
+            /* 放大 logo */
             height: 64px;
             border-radius: 50%;
             object-fit: cover;
             margin-right: 12px;
             cursor: pointer;
         }
+
         .navbar-title {
             flex: none;
             text-align: center;
             font-size: 2.2rem;
             font-weight: bold;
-            color: #ff8800; /* 橘色 */
+            color: #ff8800;
+            /* 橘色 */
             letter-spacing: 2px;
             margin: 0;
             min-width: 240px;
@@ -54,6 +63,7 @@
             position: relative;
             left: 0;
         }
+
         @media (min-width: 601px) {
             .navbar-header {
                 flex-direction: row;
@@ -62,6 +72,7 @@
                 width: auto;
                 gap: 24px;
             }
+
             .navbar-title {
                 font-size: 2.2rem;
                 width: auto;
@@ -70,12 +81,14 @@
                 left: 0;
             }
         }
+
         @media (max-width: 600px) {
             .navbar {
                 flex-direction: column;
                 align-items: center;
                 padding: 8px 12px;
             }
+
             .navbar-header {
                 flex-direction: row;
                 justify-content: center;
@@ -83,19 +96,23 @@
                 gap: 12px;
                 width: 100%;
             }
+
             .navbar-logo {
                 justify-content: center;
                 width: 100%;
             }
+
             .navbar-logo img {
                 margin: 0 auto 8px auto;
                 display: block;
             }
+
             .navbar-title {
                 font-size: 1.1rem;
                 width: auto;
                 min-width: unset;
             }
+
             .navbar-menu {
                 display: none;
                 flex-direction: column;
@@ -104,9 +121,11 @@
                 background: #fff9e5;
                 padding: 8px 0;
             }
+
             .navbar-menu.show {
                 display: flex;
             }
+
             .navbar-toggle {
                 display: flex;
                 justify-content: flex-start;
@@ -123,6 +142,7 @@
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="navbar-header">
@@ -140,46 +160,63 @@
         </div>
     </nav>
     <script>
-    // logo 點擊回到最上方
-    document.getElementById('logo-link').onclick = function(e) {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-    // 聯絡方式點擊跳轉到最底下
-    document.getElementById('contact-link').onclick = function(e) {
-        e.preventDefault();
-        // 找到 footer 元素並平滑滾動
-        var footer = document.querySelector('footer');
-        if (footer) {
-            footer.scrollIntoView({ behavior: 'smooth' });
+        // logo 點擊回到最上方
+        document.getElementById('logo-link').onclick = function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+        // 聯絡方式點擊跳轉到最底下
+        // document.getElementById('contact-link').onclick = function(e) {
+        //     e.preventDefault();
+        //     // 找到 footer 元素並平滑滾動
+        //     var footer = document.querySelector('footer');
+        //     if (footer) {
+        //         footer.scrollIntoView({ behavior: 'smooth' });
+        //     }
+        // };
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactLink = document.getElementById('contact-link');
+            const footer = document.getElementById('footer');
+
+            if (contactLink && footer) {
+                const isIndexPage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/';
+
+                if (isIndexPage) {
+                    contactLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        footer.scrollIntoView({ behavior: 'smooth' });
+                    });
+                }
+            }
+        });
+
+        // RWD 導覽列收合
+        function handleResize() {
+            const toggle = document.getElementById('navbar-toggle');
+            const menu = document.getElementById('navbar-menu');
+            if (window.innerWidth <= 600) {
+                toggle.style.display = 'flex';
+                menu.classList.remove('show');
+            } else {
+                toggle.style.display = 'none';
+                menu.classList.add('show');
+            }
         }
-    };
-    // RWD 導覽列收合
-    function handleResize() {
-        const toggle = document.getElementById('navbar-toggle');
-        const menu = document.getElementById('navbar-menu');
-        if(window.innerWidth <= 600) {
-            toggle.style.display = 'flex';
-            menu.classList.remove('show');
-        } else {
-            toggle.style.display = 'none';
-            menu.classList.add('show');
-        }
-    }
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    document.getElementById('navbar-toggle').onclick = function() {
-        const menu = document.getElementById('navbar-menu');
-        if(menu.classList.contains('show')) {
-            menu.classList.remove('show');
-            this.innerHTML = '&#x25BC;';
-        } else {
-            menu.classList.add('show');
-            this.innerHTML = '&#x25B2;';
-        }
-    };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        document.getElementById('navbar-toggle').onclick = function () {
+            const menu = document.getElementById('navbar-menu');
+            if (menu.classList.contains('show')) {
+                menu.classList.remove('show');
+                this.innerHTML = '&#x25BC;';
+            } else {
+                menu.classList.add('show');
+                this.innerHTML = '&#x25B2;';
+            }
+        };
     </script>
 </body>
+
 </html>
 <section id="about" class="about-section" style="padding-top:80px;">
     <div class="about-container">
@@ -206,60 +243,71 @@
         padding: 48px 32px;
         background: #fff;
     }
+
     .about-container {
         display: flex;
         gap: 48px;
-        align-items: flex-start; /* 改為 flex-start 以固定文字位置 */
+        align-items: flex-start;
+        /* 改為 flex-start 以固定文字位置 */
         max-width: 1200px;
         margin: 0 auto;
     }
+
     .about-text {
         flex: 1;
     }
+
     .about-text h2 {
         font-size: 2rem;
         color: #ff8800;
         margin-bottom: 16px;
     }
+
     .about-text p {
         font-size: 1rem;
         line-height: 1.6;
         color: #333;
     }
+
     .about-image {
         flex: 1;
         text-align: center;
     }
+
     .about-image img {
         width: 100%;
         max-width: 400px;
         border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         margin-top: 40px;
     }
+
     @media (max-width: 600px) {
         .about-container {
             flex-direction: column;
             gap: 24px;
         }
+
         .about-text h2 {
             font-size: 1.5rem;
         }
     }
+
     #carousel-image {
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    margin: 20px auto 0;  /* 上 20px、左右置中、下 0 */
-}
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+        margin: 20px auto 0;
+        /* 上 20px、左右置中、下 0 */
+    }
 </style>
 
 <script>
     let currentImage = 0;
     function cycleImages() {
         currentImage++;
-        if(currentImage > 7) currentImage = 0;
+        if (currentImage > 7) currentImage = 0;
         document.getElementById('carousel-image').src = 'image/' + currentImage + '.jpg';
     }
     setInterval(cycleImages, 3000);
@@ -272,74 +320,74 @@
         <h4 style="font-size: 1.2rem; text-align: center; color: #333;">2025</h4>
         <div class="projects-grid">
             <div class="project-card">
-                <h3>0916日</h3>
+                <h3>GoogleSite個人網頁</h3>
                 <a href="https://sites.google.com/stu.ntue.edu.tw/cody0312/%E9%A6%96%E9%A0%81" target="_blank">
                     <img src="image/0916.png" alt="0916日作品">
                 </a>
-                <p class="project-date">0916</p>
+                <p class="project-date">0916日</p>
             </div>
             <div class="project-card">
-                <h3>0923日</h3>
+                <h3>AI協助的簡易首頁製作</h3>
                 <a href="https://yuzhen-chen.github.io/old_index.html" target="_blank">
                     <img src="image/0923.png" alt="0923日作品">
                 </a>
-                <p class="project-date">0923</p>
+                <p class="project-date">0923日</p>
             </div>
             <div class="project-card">
-                <h3>0930日</h3>
+                <h3>表格化圖與詩</h3>
                 <a href="https://yuzhen-chen.github.io/0930/" target="_blank">
                     <img src="image/0930.png" alt="0930日作品">
                 </a>
-                <p class="project-date">0930</p>
+                <p class="project-date">0930日</p>
             </div>
             <div class="project-card">
-                <h3>1007日</h3>
+                <h3>表格 × 圖片練習</h3>
                 <a href="https://yuzhen-chen.github.io/1007/" target="_blank">
                     <img src="image/1007.png" alt="1007日作品">
                 </a>
-                <p class="project-date">1007</p>
+                <p class="project-date">1007日</p>
             </div>
             <div class="project-card">
-                <h3>1014日</h3>
+                <h3>個人名片小卡製作</h3>
                 <a href="https://yuzhen-chen.github.io/1014/" target="_blank">
                     <img src="image/1014.png" alt="1014日作品">
                 </a>
-                <p class="project-date">1014</p>
+                <p class="project-date">1014日</p>
             </div>
             <div class="project-card">
-                <h3>1014日</h3>
+                <h3>區塊分隔實作</h3>
                 <a href="https://yuzhen-chen.github.io/1014/1014.html" target="_blank">
                     <img src="image/1014-2.png" alt="1014日作品">
                 </a>
-                <p class="project-date">1014</p>
+                <p class="project-date">1014日</p>
             </div>
             <div class="project-card">
-                <h3>1021日</h3>
+                <h3>使用w3school template製作個人網頁</h3>
                 <a href="https://yuzhen-chen.github.io/1021/" target="_blank">
                     <img src="image/1021.png" alt="1021日作品">
                 </a>
-                <p class="project-date">1021</p>
+                <p class="project-date">1021日</p>
             </div>
             <div class="project-card">
-                <h3>1111日</h3>
+                <h3>使用bootstrap製作個人網頁</h3>
                 <a href="https://yuzhen-chen.github.io/old_2_index.html" target="_blank">
                     <img src="image/1111.png" alt="1111日作品">
                 </a>
-                <p class="project-date">1111</p>
+                <p class="project-date">1111日</p>
             </div>
             <div class="project-card">
-                <h3>1118日</h3>
+                <h3>114國立臺北教育大學之科技應用設計競賽的網頁實作(個人)</h3>
                 <a href="https://yuzhen-chen.github.io/1118/index.html" target="_blank">
                     <img src="image/1118.png" alt="1118日作品">
                 </a>
-                <p class="project-date">1118</p>
+                <p class="project-date">1118日</p>
             </div>
             <div class="project-card">
-                <h3>1125日</h3>
+                <h3>「130向前走」國立臺北教育大學130週年校慶點燈祈福儀式的網頁實作(小組)</h3>
                 <a href="https://sites.google.com/stu.ntue.edu.tw/cheese/%E9%A6%96%E9%A0%81" target="_blank">
                     <img src="image/1125.png" alt="1125日作品">
                 </a>
-                <p class="project-date">1125</p>
+                <p class="project-date">1125日</p>
             </div>
         </div>
     </div>
@@ -350,37 +398,44 @@
         padding: 48px 32px;
         background: #f5f5f5;
     }
+
     .projects-container {
         max-width: 1200px;
         margin: 0 auto;
     }
+
     .projects-container h2 {
         font-size: 2rem;
         color: #ff8800;
         margin-bottom: 32px;
         text-align: center;
     }
+
     .projects-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 32px;
     }
+
     .project-card {
         background: #fff;
         border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         text-align: center;
     }
+
     .project-card h3 {
         font-size: 1.3rem;
         color: #333;
         margin: 16px 16px 12px 16px;
     }
+
     .project-card a {
         display: block;
         overflow: hidden;
     }
+
     .project-card img {
         width: 100%;
         height: 250px;
@@ -388,24 +443,27 @@
         transition: transform 0.3s ease;
         cursor: pointer;
     }
+
     .project-card img:hover {
         transform: scale(1.05);
     }
+
     .project-date {
         font-size: 0.9rem;
         color: #666;
         margin: 12px 16px 16px 16px;
     }
+
     @media (max-width: 600px) {
         .projects-grid {
             grid-template-columns: 1fr;
             gap: 24px;
         }
+
         .projects-container h2 {
             font-size: 1.5rem;
         }
     }
-    
 </style>
 
 <footer id="footer" class="footer">
@@ -438,39 +496,47 @@
         padding: 48px 32px;
         border-top: 2px solid #ff8800;
     }
+
     .footer-container {
         display: flex;
         gap: 64px;
         max-width: 1200px;
         margin: 0 auto;
     }
+
     .footer-contact {
         flex: 1;
     }
+
     .footer-contact h3 {
         font-size: 1.5rem;
         color: #ff8800;
         margin-bottom: 16px;
     }
+
     .footer-contact p {
         font-size: 1rem;
         color: #333;
         line-height: 1.8;
         margin: 8px 0;
     }
+
     .footer-tags {
         flex: 1;
     }
+
     .footer-tags h3 {
         font-size: 1.5rem;
         color: #ff8800;
         margin-bottom: 16px;
     }
+
     .tags-container {
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
     }
+
     .tag {
         background: #ff8800;
         color: #fff;
@@ -480,18 +546,20 @@
         cursor: pointer;
         transition: background 0.3s ease;
     }
+
     .tag:hover {
         background: #ff7700;
     }
+
     @media (max-width: 600px) {
         .footer-container {
             flex-direction: column;
             gap: 32px;
         }
+
         .footer-contact h3,
         .footer-tags h3 {
             font-size: 1.2rem;
         }
     }
 </style>
-
